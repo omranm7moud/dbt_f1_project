@@ -7,6 +7,4 @@ select
     driver_last_name     AS last_name,
     driver_short_name    AS short_name,
     driver_nationality   AS nationality,
-    team,
-    lower (split_part(team_url, '/', 8)) AS team_id
 from {{ source('f1_raw', 'raw_drivers') }}

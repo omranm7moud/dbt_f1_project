@@ -28,6 +28,10 @@ models:
         description: "Driver nationality"
         data_tests:
           - not_null
+
+  - name: stg_teams
+    description: "This model is used for staging teams data before it is transformed and loaded into the final tables."
+    columns:
       - name: team
         description: "Driver team"
       - name: team_id
@@ -37,7 +41,7 @@ models:
           - unique
         
 
-  -name: stg_races
+  - name: stg_races
     description: "This model is used for staging races data before it is transformed and loaded into the final tables."
     columns:
       - name: id
@@ -61,16 +65,67 @@ models:
         description: "Winner driver last name"
         data_tests:
           - not_null
-        
-        data_tests:
-          - not_null
-      - name: name
-        description: "Race name"
+      - name: winner_driver_short_name
+        description: "Winner driver short name"
         data_tests:
           - not_null
       - name: date
         description: "Race date"
         data_tests:
           - not_null
-      - name: time
-        description: "Race time"
+      - name: winner_time
+        description: "Winner time"
+        data_tests:
+          - not_null
+      - name: winner_team
+        description: "Winner team"
+        data_tests:
+          - not_null
+      - name: winner_laps
+        description: "Winner laps"
+        data_tests:
+          - not_null
+
+  - name: stg_results
+    description: "This model is used for staging results data before it is transformed and loaded into the final tables."
+    columns: 
+      - name: race_id
+        description: "Race ID"
+        data_tests:
+          - not_null
+      - name: driver_first_name
+        description: "Driver first name"
+        data_tests:
+          - not_null
+      - name: driver_last_name
+        description: "Driver last name" 
+        data_tests:
+          - not_null
+      - name: driver_short_name
+        description: "Driver short name"
+        data_tests:
+          - not_null
+      - name: team
+        description: "Driver team" 
+        data_tests:
+          - not_null
+      - name: laps
+        description: "Number of laps completed by the driver in the race"
+        data_tests:
+          - not_null
+      - name: pos
+        description: "Driver position"
+        data_tests:
+          - not_null
+      - name: no
+        description: "Driver number in the race"
+        data_tests:
+          - not_null
+      - name: points
+        description: "Points earned by the driver in the race"
+        data_tests:
+          - not_null
+      - name: time_retired
+        description: "Time taken by the driver to complete the race"
+        data_tests:
+          - not_null
