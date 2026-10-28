@@ -1,0 +1,11 @@
+version: 2 
+
+sources:
+  - name: f1_raw
+    database: f1_project
+    schema: public
+    tables:
+      - name: raw_drivers
+      - name: raw_races
+      - name: raw_results
+      

@@ -1,0 +1,76 @@
+version : 2
+
+
+models:
+  - name: stg_drivers
+    description: "This model is used for staging drivers data before it is transformed and loaded into the final tables."
+    columns:
+      - name: id
+        description: "Driver ID"
+        data_tests:
+          - not_null
+          - unique
+      - name: first_name
+        description: "Driver firsts name"
+        data_tests:
+          - not_null
+      - name: last_name
+        description: "Driver last name"
+        data_tests:
+          - not_null
+      - name: slug
+        description: "Driver slug"
+        data_tests:
+          - not_null
+      - name: short_name
+        description: "Driver short name"
+      - name: nationality
+        description: "Driver nationality"
+        data_tests:
+          - not_null
+      - name: team
+        description: "Driver team"
+      - name: team_id
+        description: "Driver team ID"
+        data_tests:
+          - not_null
+          - unique
+        
+
+  -name: stg_races
+    description: "This model is used for staging races data before it is transformed and loaded into the final tables."
+    columns:
+      - name: id
+        description: "Race ID"
+        data_tests:
+          - not_null
+          - unique
+      - name: year
+        description: "Race year"
+        data_tests:
+          - not_null
+      - name: grand_prix
+        description: "Grand Prix name"
+        data_tests:
+          - not_null
+      - name: winner_driver_first_name
+        description: "Winner driver first name"
+        data_tests:
+          - not_null
+      - name: winner_driver_last_name
+        description: "Winner driver last name"
+        data_tests:
+          - not_null
+        
+        data_tests:
+          - not_null
+      - name: name
+        description: "Race name"
+        data_tests:
+          - not_null
+      - name: date
+        description: "Race date"
+        data_tests:
+          - not_null
+      - name: time
+        description: "Race time"
