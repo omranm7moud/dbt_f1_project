@@ -1,7 +1,15 @@
 import psycopg2
 from psycopg2 import extras
-
-from config import DB_CONFIG
+import os
+from dotenv import load_dotenv
+load_dotenv()  # Load environment variables from .env file
+DB_CONFIG = {
+    'host': os.environ['host'],
+    'port': os.environ['port'],
+    'user': os.environ['user'],
+    'password': os.environ['password'],
+    'database': os.environ['database']
+}
 
 def saving(races, drivers, results):
     conn: psycopg2.extensions.connection = psycopg2.connect(**DB_CONFIG, cursor_factory=extras.RealDictCursor)
