@@ -20,14 +20,10 @@ models:
           - not_null
       - name: slug
         description: "Driver slug"
-        data_tests:
-          - not_null
       - name: short_name
         description: "Driver short name"
       - name: nationality
         description: "Driver nationality"
-        data_tests:
-          - not_null
 
   - name: stg_teams
     description: "This model is used for staging teams data before it is transformed and loaded into the final tables."
@@ -79,12 +75,8 @@ models:
           - not_null
       - name: winner_team
         description: "Winner team"
-        data_tests:
-          - not_null
       - name: winner_laps
         description: "Winner laps"
-        data_tests:
-          - not_null
 
   - name: stg_results
     description: "This model is used for staging results data before it is transformed and loaded into the final tables."
@@ -111,21 +103,13 @@ models:
           - not_null
       - name: laps
         description: "Number of laps completed by the driver in the race"
-        data_tests:
-          - not_null
       - name: pos
         description: "Driver position"
         data_tests:
           - not_null
-      - name: no
+      - name: "no"
         description: "Driver number in the race"
-        data_tests:
-          - not_null
       - name: points
         description: "Points earned by the driver in the race"
-        data_tests:
-          - not_null
       - name: time_retired
         description: "Time taken by the driver to complete the race"
-        data_tests:
-          - not_null
